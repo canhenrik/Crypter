@@ -13,15 +13,15 @@ import rx.Subscription;
 
 public class FrameReceiverObservable {
 
-    private static final int TIEMOUT = 30;
-    private static final int BUFFER_SIZE = 1024;
+    private static final int TIMEMOUT = 30;
+    private static final int BUFFER_SIZE = 1024;// defines the framelength
 
     public static Observable<byte[]> create(Context context, String profile) {
         return Observable.create(subscriber -> {
             try {
                 FrameReceiverConfig receiverConfig = new FrameReceiverConfig(context, profile);
                 FrameReceiver frameReceiver = new FrameReceiver(receiverConfig);
-                frameReceiver.setBlocking(TIEMOUT, 0);
+                frameReceiver.setBlocking(TIMEMOUT, 0);
                 final byte[] buf = new byte[BUFFER_SIZE];
 
                 subscriber.add(new Subscription() {

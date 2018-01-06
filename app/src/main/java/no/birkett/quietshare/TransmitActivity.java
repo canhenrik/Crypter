@@ -81,7 +81,7 @@ public class TransmitActivity extends AppCompatActivity {
     private void setupProfileSpinner() {
         spinnerArrayAdapter = ProfilesHelper.createArrayAdapter(this);
         profileSpinner.setAdapter(spinnerArrayAdapter);
-        profileSpinner.setSelection(0, false);
+        profileSpinner.setSelection(4, false);
         profileSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

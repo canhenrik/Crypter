@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +32,10 @@ public class ReceiveActivity extends AppCompatActivity {
     private TextView receiveStatus;
     private Subscription frameSubscription = Subscriptions.empty();
 
+
     private static final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +91,7 @@ public class ReceiveActivity extends AppCompatActivity {
     private void subscribeToFrames() {
         frameSubscription.unsubscribe();
         frameSubscription = FrameReceiverObservable.create(this, getProfile()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(buf -> {
-            receivedContent.setText(new String(buf, Charset.forName("UTF-8")));
+            receivedContent.setText(receivedContent.getText()+new String(buf, Charset.forName("UTF-8")));
             Long time = System.currentTimeMillis() / 1000;
             String timestamp = time.toString();
 
