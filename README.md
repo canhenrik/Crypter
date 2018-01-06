@@ -1,4 +1,4 @@
-# QuietShare
+# Crypter
 
 A proof of concept Android app to send messages between phones using audio. 
 
@@ -8,4 +8,4 @@ It's possible to demonstrate sending messages from one device to another. Reliab
 
 # Dependencies
 
-By default, QuietShare expects the [Quiet for Android](https://github.com/quiet/org.quietmodem.Quiet) to be located in the folder `../org.quietmodem.Quiet/quiet` relative to itself. That is, QuietShare and [Quiet for Android](https://github.com/quiet/org.quietmodem.Quiet) should have the same parent folder. 
+By default, Crypter expects the [Quiet for Android](https://github.com/quiet/org.quietmodem.Quiet) to be located in the folder `../org.quietmodem.Quiet/quiet` relative to itself. That is, QuietShare and [Quiet for Android](https://github.com/quiet/org.quietmodem.Quiet) should have the same parent folder. 
